@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile - Mehdi Hassan Emon</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+body {
+  margin:0;
+  padding:0;
+  font-family:"Inter", sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  display:flex;
+  justify-content:center;
+  min-height:100vh;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Container */
+.box {
+  width:100%;
+  max-width:520px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:20px; /* Gap between cards */
+  margin-bottom:120px; /* Footer space */
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+.card {
+  background: linear-gradient(135deg, #1b1b2f, #2a2a4f);
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.6);
+  color:#fff;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Card animation delays */
+#profileCard {animation-delay:0.1s;}
+#infoCard {animation-delay:0.2s;}
+#extraInfoCard {animation-delay:0.3s;}
+#additionalInfoCard {animation-delay:0.4s;}
+#achievementsCard {animation-delay: 0.5s;}
+#socialCard {animation-delay:0.6s;}
+#quoteCard {animation-delay:0.8s;}
+
+/* Profile Image Pulse */
+@keyframes pulse {
+  0% {transform:scale(1); box-shadow:0 0 0 rgba(0,255,255,0.4);}
+  70%{transform:scale(1.02); box-shadow:0 0 10px rgba(0,255,255,0.7);}
+  100%{transform:scale(1); box-shadow:0 0 0 rgba(0,255,255,0.4);}
+}
+.profile-img {
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 18px;
+  border:4px solid #00ffff;
+  animation:pulse 2s infinite ease-in-out;
+}
+
+/* Name + Badge */
+.name-container {text-align:center; margin-top:15px; margin-bottom:20px;}
+.profile-name {
+  font-size:1.8rem;
+  font-weight:bold;
+  background:linear-gradient(90deg, #ffcc00, #ff6600);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  display:inline-block;
+}
+.verified-badge i {color:#00aaff !important; font-size:1.1rem; margin-left:6px;}
+.title-text {display:block; font-size:0.85rem; color:#aaaaaa; font-weight:500; margin-top:5px; letter-spacing:0.5px; text-shadow:0 0 5px rgba(0,0,0,0.5);}
+
+/* Info Card */
+.info {background:#222; color:#fff; border-radius:12px; padding:14px; font-size:0.95rem; text-align:center; font-weight:bold; box-shadow:0 4px 12px rgba(0,0,0,0.5); transition:all 0.3s; margin-bottom:12px;}
+.info:hover {transform:scale(1.03); background:#333;}
+.info i {margin-right:8px; color:#00ffff;}
+
+/* Social */
+.social a {display:flex; align-items:center; justify-content:center; background:linear-gradient(90deg, #00ffff, #0099ff); color:#0f0f0f; text-decoration:none; font-weight:bold; margin-bottom:12px; padding:14px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.5); transition:transform 0.3s, background 0.3s;}
+.social a i {margin-right:10px; font-size:1.2em;}
+.social a:hover {background:linear-gradient(90deg, #ffcc00, #ff9900); transform:scale(1.05); animation: shake-lr 0.4s ease-in-out;}
+@keyframes shake-lr {0%,100%{transform:translateX(0);}20%,60%{transform:translateX(-5px);}40%,80%{transform:translateX(5px);}}
+
+/* Quote Card */
+.quote-box {background:linear-gradient(135deg,#4b6cb7,#182848); color:#fff; padding:20px; border-radius:16px;}
+
+/* Footer Fixed */
+.footer-fixed {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background: rgba(0,0,0,0.85);
+  color:#ff99ff;
+  text-align:center;
+  padding:6px 0;
+  font-size:0.85rem;
+  z-index:999;
+}
+.footer-fixed .footer-dev {
+  display:block;
+  color:#ffffff;
+  font-weight:500;
+  font-size:0.8rem;
+  margin-top:2px;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <div class="card" id="profileCard">
+    <img src="https://i.postimg.cc/XJBDhRLV/IMG-20250722-WA0003.jpg" class="profile-img">
+    <div class="name-container">
+      <span class="profile-name">Mehdi Hassan Emon</span>
+      <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
+      <span class="title-text">Official Profile / Cyber Sentinel Bangladesh Team Csb Student</span>
+    </div>
+  </div>
+
+  <div class="card" id="infoCard">
+    <div class="info"><i class="fas fa-briefcase"></i> Work: Cyber Sentinel Bangladesh</div>
+    <div class="info"><i class="fas fa-map-marker-alt"></i> Location: Bangladesh</div>
+    <div class="info"><i class="fas fa-calendar-alt"></i> Birthday: 10 October</div>
+    <div class="info"><i class="fas fa-tint"></i> Blood Group: Unknown</div>
+    <div class="info"><i class="fas fa-globe"></i> Website: [https://www.facebook.com/flashbreak650]</div> 
+  </div>
+
+  <div class="card" id="extraInfoCard">
+    <div class="info"><i class="fas fa-star"></i> Hobbies: Ethical Hacking, Programming, Gaming</div>
+    <div class="info"><i class="fas fa-code"></i> Skills: Termux, Android Tech, Learning Python</div>
+  </div>
+
+  <div class="card" id="additionalInfoCard">
+    <div class="info"><i class="fas fa-user-graduate"></i> Education: Cyber Security Student</div>
+    <div class="info"><i class="fas fa-laptop-code"></i> Favorite Language: Python</div>
+    <div class="info"><i class="fas fa-gamepad"></i> Favorite Game: Free fire</div>
+    <div class="info"><i class="fas fa-music"></i> Favorite Music: Lo-fi / EDM</div>
+  </div>
+
+  <div class="card" id="achievementsCard">
+    <div class="info"><i class="fas fa-trophy"></i> Goal: CEH Certification</div>
+    <div class="info"><i class="fas fa-shield-alt"></i> Bug Hunting Enthusiast</div>
+    <div class="info"><i class="fas fa-project-diagram"></i> Built 2+ Web Projects (E-commerce & Portfolio)</div>
+  </div>
+
+  <div class="card social" id="socialCard">
+    <a href="t.me/ikemon650" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+    
+    <a href="mailto: indhassan6050@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email Contact</a> 
+    
+    <a href="https://instagram.com/[YOUR_INSTAGRAM_USERNAME]" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> 
+    
+    <a href="https://www.facebook.com/mdemon07886" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+    
+    <a href="https://wa.me/qr/MYBYXNXGLNEOA1" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a> 
+  </div>
+
+  <div class="card quote-box" id="quoteCard">
+    "Islam is a way of life that teaches us justice, honesty, patience, and altruism. Following this path brings peace to the heart, strength to the mind, and illumination to life."
+  </div>
+</div>
+
+<div class="footer-fixed">
+  ©2025 Secure Profile Interface
+  <span class="footer-dev">Developer: Mehdi Hasan Emon</span>
+</div>
+
+</body>
+</html>
